@@ -1,7 +1,11 @@
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+
 function App() {
   return (
     <div>
-      <h1>Welcome Muscle Power</h1>
+      <Header></Header>
+      <Home></Home>
     </div>
   );
 }
