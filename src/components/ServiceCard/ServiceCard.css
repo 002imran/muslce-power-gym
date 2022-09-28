@@ -1,0 +1,7 @@
+.serviceCard{
+    border: 2px solid black;
+}
+.serviceCard img{
+    height: 240px;
+    width: 100%;
+}
