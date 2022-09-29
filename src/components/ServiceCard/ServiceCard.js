@@ -2,16 +2,19 @@ import React from 'react';
 import './ServiceCard.css'
 
 const ServiceCard = (props) => {
+    const {service, handleCart} = props;
     const {name, picture, age, time} = props.service;
     return (
       <div className="serviceCard">
         <img src={picture} alt=""></img>
-        <div className='display-data'>
+        <div className="display-data">
           <h2>{name}</h2>
           <h3>Age:{age}</h3>
           <p>Duration:{time} Minute</p>
         </div>
-        <button className="button">Add to list</button>
+        <button onClick={()=>handleCart(service)} className="button">
+          Add to list
+        </button>
       </div>
     );
 };

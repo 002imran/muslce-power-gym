@@ -1,10 +1,19 @@
 import React from 'react';
 import profileImg from "./faceless.jpg";
 
-const Cart = () => {
+const Cart = ({cart}) => {
+    let totalTime = 0;
+    for(const service of cart){
+        totalTime = totalTime + service.time;
+    }
+    
+    const handleBreak =()=>{
+          console.log('eee');
+    }
     return (
       <div>
         <div className="exercise-summary">
+          <h2>Cart Length: {cart.length}</h2>
           <div className="profile">
             <img src={profileImg} alt=""></img>
             <h2>Mr. Jhon</h2>
@@ -26,7 +35,7 @@ const Cart = () => {
           </div>
 
           <div className="break-container">
-            <p>10s</p>
+            <p onClick={handleBreak}>10s</p>
             <p>20s</p>
             <p>30s</p>
             <p>40s</p>
@@ -36,7 +45,7 @@ const Cart = () => {
           <div className="calculate-details">
             <h2>Exercise Details</h2>
             <div>
-              <p>Exercise Time</p>
+              <p>Exercise Time : {totalTime} Minute</p>
             </div>
             <div>
               <p>Break Time</p>
