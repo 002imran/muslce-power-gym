@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Blog from '../Blog/Blog';
 import Cart from '../Cart/Cart';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
@@ -35,7 +36,10 @@ const Home = () => {
           <Cart cart={cart}></Cart>
 
         </div>
+
+        <Blog></Blog>
       </div>
+      
     );
 };
 

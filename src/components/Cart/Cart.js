@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import profileImg from "./faceless.jpg";
 import './Cart.css'
 import Swal from "sweetalert2"
 
+
 const Cart = ({cart}) => {
-    const [time, setTime] = useState(0);
+      
+    const [time, setTime] = useState([0]);
+    
+
+    useEffect(()=>{
+      localStorage.setItem("time", JSON.stringify(time));
+         
+    },[time]);
+
+    useEffect(()=>{
+        localStorage.getItem("time",JSON.parse(time));
+        setTime(time);
+    },[time])
+
+    // useEffect(()=>{
+    //     const items = JSON.parse(localStorage.getItem('items'));
+    //     if(items){
+    //         setItem(items);
+    //     }
+    // },[]);
 
     let totalTime = 0;
     for(const service of cart){
@@ -31,7 +51,6 @@ const Cart = ({cart}) => {
     return (
       <div>
         <div className="exercise-summary">
-         
           <div className="profile">
             <img src={profileImg} alt=""></img>
             <h2>Mr. Jhon</h2>
@@ -53,11 +72,11 @@ const Cart = ({cart}) => {
           </div>
 
           <div className="break-container">
-            <p onClick={() => setTime(time + 10)}>10m</p>
-            <p onClick={() => setTime(time + 20)}>20m</p>
-            <p onClick={() => setTime(time + 30)}>30m</p>
-            <p onClick={() => setTime(time + 40)}>40m</p>
-            <p onClick={() => setTime(time + 50)}>50m</p>
+            <p onClick={() => setTime(totalTime + 10)}>10m</p>
+            <p onClick={() => setTime(totalTime + 20)}>20m</p>
+            <p onClick={() => setTime(totalTime + 30)}>30m</p>
+            <p onClick={() => setTime(totalTime + 40)}>40m</p>
+            <p onClick={() => setTime(totalTime + 50)}>50m</p>
           </div>
 
           <div className="calculate-details">

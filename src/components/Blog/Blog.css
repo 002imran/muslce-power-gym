@@ -1,0 +1,10 @@
+.blog{
+    width: 80%;
+    margin-left:40px;
+}
+.blog h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
