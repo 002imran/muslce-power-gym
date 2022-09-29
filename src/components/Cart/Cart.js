@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import profileImg from "./faceless.jpg";
+import './Cart.css'
+import Swal from "sweetalert2"
 
 const Cart = ({cart}) => {
+    const [time, setTime] = useState(0);
+
     let totalTime = 0;
     for(const service of cart){
         totalTime = totalTime + service.time;
     }
     
-    const handleBreak =()=>{
-          console.log('eee');
+
+    // const handleBreak =()=>{
+    //       console.log(setTime(time+10));
+        
+    // }
+   
+    const handleComplete =()=>{
+        console.log('cliked');
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your Activity Saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
     }
+
     return (
       <div>
         <div className="exercise-summary">
-          <h2>Cart Length: {cart.length}</h2>
+         
           <div className="profile">
             <img src={profileImg} alt=""></img>
             <h2>Mr. Jhon</h2>
@@ -35,11 +53,11 @@ const Cart = ({cart}) => {
           </div>
 
           <div className="break-container">
-            <p onClick={handleBreak}>10s</p>
-            <p>20s</p>
-            <p>30s</p>
-            <p>40s</p>
-            <p>50s</p>
+            <p onClick={() => setTime(time + 10)}>10m</p>
+            <p onClick={() => setTime(time + 20)}>20m</p>
+            <p onClick={() => setTime(time + 30)}>30m</p>
+            <p onClick={() => setTime(time + 40)}>40m</p>
+            <p onClick={() => setTime(time + 50)}>50m</p>
           </div>
 
           <div className="calculate-details">
@@ -48,9 +66,11 @@ const Cart = ({cart}) => {
               <p>Exercise Time : {totalTime} Minute</p>
             </div>
             <div>
-              <p>Break Time</p>
+              <p>Break Time: {time} Minute</p>
             </div>
-            <button className="activity-button">Activity Completed</button>
+            <button onClick={handleComplete} className="activity-button">
+              Activity Completed
+            </button>
           </div>
         </div>
       </div>

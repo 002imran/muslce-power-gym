@@ -6,6 +6,8 @@
 }
 .exercise-cart-container{
     background-color: antiquewhite;
+    width: 100%;
+   
 }
 .heading{
     text-align: center;
@@ -34,7 +36,7 @@
     margin: 100px 50px;
         
 }
-.physical-condition{
+.physical-condition {
     margin: 10px;
     padding: 10px;
     padding-left: 25px;
@@ -43,28 +45,6 @@
     gap: 40px;
     border-radius: 20px;
 }
-
-.break-container{
-    display: flex;
-    gap: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-    background-color: white;
-}
-.break-container p{
-    height: 25px;
-    width: 25px;
-    background-color: gray;
-    border-radius: 20px;
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 16px;
-    background-color: cornflowerblue;
-    color: white;
-}
-
 
 .calculate-details{
     margin: 10px;
@@ -87,4 +67,54 @@
     color: white;
     font-size: 16px;
     font-weight: 500;
-    }
+}
+
+/*Responsive for Mobile and small devices */
+
+
+@media only screen and (max-width: 600px){
+    .exercise-container {
+       display: grid;
+       grid-template-columns: 12fr;
+       height: 100vh;
+       
+       /* display: none; */
+  }
+  .service-container {
+            display: grid;
+            grid-template-columns: 12fr;
+            gap: 45px;
+            margin: 100px 50px;
+            position: auto ;
+            width: 80%;
+
+  }
+  .exercise-cart-container {
+      background-color: antiquewhite;
+      width: 100%;
+
+  }
+  
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+            .exercise-container {
+                    display: grid;
+                   
+                    grid-template-columns: 6fr;
+                    height: 100vh;
+                
+                }
+            
+                .service-container {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    width: 90%;
+                   
+                }
+             .exercise-cart-container {
+                    background-color: antiquewhite;
+                    width: 100%;
+                 
+           }
+        }
