@@ -2,36 +2,42 @@
   {
     "id": "633464c4873e6fe2fc4857f2",
     "picture": "./images/img7.png",
+    "name": "Dumble",
     "age": 51,
     "time": 45
   },
   {
     "id": "633464c47a54f5d13dedf42d",
     "picture": "./images/img2.png",
+    "name": "Weight Lifting",
     "age": 29,
     "time": 39
   },
   {
     "id": "633464c4fba65b60b9d40684",
     "picture": "./images/img3.png",
+    "name": "Treadmill",
     "age": 33,
     "time": 30
   },
   {
     "id": "633464c4b32c6b3e212898ad",
     "picture": "./images/img4.png",
+    "name": "Fitness Equipment",
     "age": 32,
     "time": 31
   },
   {
     "id": "633464c483b2a8999d26e1d7",
     "picture": "./images/img6.png",
+    "name": "Fitness Equipment",
     "age": 58,
     "time": 38
   },
   {
     "id": "633464c483b2a8999d26e1d7",
     "picture": "./images/img7.png",
+    "name": "Dumble",
     "age": 58,
     "time": 38
   }
