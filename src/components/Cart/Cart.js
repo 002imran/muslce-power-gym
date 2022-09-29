@@ -6,13 +6,15 @@ import Swal from "sweetalert2"
 
 const Cart = ({cart}) => {
       
-    const [time, setTime] = useState([0]);
-    
-
+    const [time, setTime] = useState(0);
     useEffect(()=>{
-      localStorage.setItem("time", JSON.stringify(time));
+      
+       localStorage.setItem("time", JSON.stringify(time));
+      console.log(time);
+    
          
     },[time]);
+
 
     useEffect(()=>{
         localStorage.getItem("time",JSON.parse(time));
@@ -31,11 +33,6 @@ const Cart = ({cart}) => {
         totalTime = totalTime + service.time;
     }
     
-
-    // const handleBreak =()=>{
-    //       console.log(setTime(time+10));
-        
-    // }
    
     const handleComplete =()=>{
         console.log('cliked');
