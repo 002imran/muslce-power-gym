@@ -5,8 +5,12 @@ import Swal from "sweetalert2"
 
 
 const Cart = ({cart}) => {
-      
-    const [time, setTime] = useState(0);
+    const initialState = () => Number(localStorage.getItem("time-value"));
+    // const [time, setTime] = useState(0);
+    const [time, setTime] = useState(initialState);
+  
+
+    /*
     useEffect(()=>{
       
        localStorage.setItem("time", JSON.stringify(time));
@@ -20,6 +24,8 @@ const Cart = ({cart}) => {
         localStorage.getItem("time",JSON.parse(time));
         setTime(time);
     },[time])
+
+    */
 
     // useEffect(()=>{
     //     const items = JSON.parse(localStorage.getItem('items'));
@@ -44,6 +50,13 @@ const Cart = ({cart}) => {
           timer: 1500,
         });
     }
+
+
+    // set data to locaStorage
+    useEffect(()=>{
+      localStorage.setItem('time-value', time)
+    },[time])
+   
 
     return (
       <div>

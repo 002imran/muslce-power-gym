@@ -5,8 +5,13 @@ import ServiceCard from '../ServiceCard/ServiceCard';
 
 import './Home.css'
 
+
 const Home = () => {
-   const [service, setService] = useState([]);
+
+
+  // const [service, setService] = useState([]);
+  const [service, setService] = useState([]);
+  //  const [cart, setCart] = useState([]);
    const [cart, setCart] = useState([]);
 
    useEffect(()=>{
@@ -21,6 +26,15 @@ const Home = () => {
     const newCart = [...cart, service]
     setCart(newCart)
    }
+
+
+   
+   //set local storage
+   useEffect(()=>{
+      localStorage.setItem("excercie-time", JSON.stringify(service));
+      
+   },[service])
+
     return (
       <div className="exercise-container">
         {/* <h1 className='heading'>Welcome To MusclePower GYM</h1> */}
